@@ -26,30 +26,30 @@ fn controls(
     if input.pressed(KeyCode::W) {
         //pull up
         // delta_transform = delta_transform + Quat::from_rotation_x(-1.0 * time.delta_seconds());
-        x_rotation -= 1.0;
+        transform.rotation *= Quat::from_rotation_x(-1.0 * time.delta_seconds());
         info!("Push Down");
     }
     if input.pressed(KeyCode::S) {
         //pull up
         // delta_transform = delta_transform + Quat::from_rotation_x(1.0 * time.delta_seconds());
-        x_rotation += 1.0;
+        transform.rotation *= Quat::from_rotation_x(1.0 * time.delta_seconds());
         info!("Pull Up");
     }
     if input.pressed(KeyCode::A) {
         //pull up
         // delta_transform = delta_transform + Quat::from_rotation_y(1.0 * time.delta_seconds());
-        y_rotation += 1.0;
+        transform.rotation *= Quat::from_rotation_y(1.0 * time.delta_seconds());
         info!("Bank Left");
     }
     if input.pressed(KeyCode::D) {
         //pull up
         // delta_transform = delta_transform + Quat::from_rotation_y(-1.0 * time.delta_seconds())
-        y_rotation -= 1.0;
+        transform.rotation *= Quat::from_rotation_y(-1.0 * time.delta_seconds());
         info!("Bank Right");
     }
 
-    transform.rotate(Quat::from_rotation_x(x_rotation * TIME_STEP));
-    transform.rotate(Quat::from_rotation_y(y_rotation * TIME_STEP));
+    // transform.rotate(Quat::from_rotation_x(x_rotation * TIME_STEP));
+    // transform.rotate(Quat::from_rotation_y(y_rotation * TIME_STEP));
 }
 
 fn setup(
