@@ -3,7 +3,6 @@
 ## Proof of concept
 
 
-  - [The First in the Velvet Sky of Dreams Series](#the-first-in-the-velvet-sky-of-dreams-series)
     - [Version Log](#version-log)
     - [Feature Development](#feature-development)
     - [Challenges](#challenges)
