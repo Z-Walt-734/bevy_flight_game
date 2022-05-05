@@ -1,8 +1,8 @@
-# Blender MTL File: 'Pancake.blend'
-# Material Count: 1
+# Blender 3.1.2 MTL File: 'None'
+# www.blender.org
 
 newmtl Texture
-Ns 96.078431
+Ns 96.078415
 Ka 1.000000 1.000000 1.000000
 Kd 0.640000 0.640000 0.640000
 Ks 0.500000 0.500000 0.500000

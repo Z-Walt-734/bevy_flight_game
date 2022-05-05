@@ -1,11 +1,11 @@
 [package]
 edition = "2021"
-name = "rust-bevy-flight-game"
+name = "bevy_flight_game"
 version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bevy = {version = "0.7", features = ["jpeg"]}
-bevy_rapier3d = "0.12.1"
-rapier3d = "0.11.1"
+bevy = "0.7"
+bevy_rapier3d = "0.13"
+rapier3d = "0.12"
