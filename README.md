@@ -1,8 +1,8 @@
-# Velvet Sky 
+# Bevy Flight Game
 
-## The First in the Velvet Sky of Dreams Series
+## Proof of concept
 
-- [Velvet Sky](#velvet-sky)
+
   - [The First in the Velvet Sky of Dreams Series](#the-first-in-the-velvet-sky-of-dreams-series)
     - [Version Log](#version-log)
     - [Feature Development](#feature-development)
