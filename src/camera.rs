@@ -11,16 +11,17 @@ pub fn setup_camera(mut commands: Commands) {
         .spawn()
         .insert(Collider::capsule_x(2.0, 6.0))
         // .insert(RigidBody::Dynamic)
-        .insert(Sensor(true))
+        .insert(Sensor::default())
         // .insert(ActiveEvents::COLLISION_EVENTS)
         .insert_bundle(TransformBundle::from(Transform::from_xyz(0.0, 0.0, 0.0)))
         .with_children(|p| {
-            p.spawn_bundle(PerspectiveCameraBundle {
+            p.spawn_bundle(Camera3dBundle {
                 transform: Transform::from_xyz(0.0, 8.0, -30.0).looking_at(Vec3::ZERO, Vec3::Y),
                 ..Default::default()
             });
         })
-        .insert(CameraTracker);
+        .insert(
+            CameraTracker);
 }
 
 pub fn move_camera_system(

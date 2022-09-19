@@ -14,7 +14,7 @@ pub struct Player;
 
 pub fn spawn_player(mut commands: Commands, asset_server: Res<AssetServer>) {
     let ship_scene_path = format!(
-        "ships/Pancake/glTF/{ship}.gltf#Scene0",
+        "ships/{ship}/glTF/{ship}.gltf#Scene0",
         ship = PLAYER_TEST_CHOICE
     );
     let ship_obj_file = format!(
@@ -64,13 +64,25 @@ pub fn spawn_player(mut commands: Commands, asset_server: Res<AssetServer>) {
     });
 
     commands
-        .spawn_bundle(ShipBundle {
+        .spawn_bundle(
+            ShipBundle {
             // position: Transform::from_xyz(0.0, -100.0, 0.0),
             ..Default::default()
-        })
-        .with_children(|p| {
-            p.spawn_scene(ship);
-        })
+        }
+    ).insert_bundle(SceneBundle{
+        // scene: ship,
+        scene: ship,
+        ..default()                
+    })
+        // .with_children(|p| {
+        //     p.spawn_bundle(
+        //         SceneBundle{
+        //             // scene: ship,
+        //             scene: asset_server.load("ships/Pancake/glTF/Pancake.gltf#Scene0"),
+        //             ..default()                
+        //         }
+        //         );
+        // })
         .insert(RigidBody::KinematicPositionBased)
         .insert(Collider::convex_hull(&ship_vertices).unwrap())
         .insert(ActiveEvents::COLLISION_EVENTS)
